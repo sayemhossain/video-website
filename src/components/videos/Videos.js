@@ -10,7 +10,17 @@ export default function Videos() {
   let content = null;
 
   if (isLoading) {
-    content = <VideoLoader></VideoLoader>;
+    content = (
+      <>
+        <VideoLoader></VideoLoader>
+        <VideoLoader></VideoLoader>
+        <VideoLoader></VideoLoader>
+        <VideoLoader></VideoLoader>
+        <VideoLoader></VideoLoader>
+        <VideoLoader></VideoLoader>
+        <VideoLoader></VideoLoader>
+      </>
+    );
   }
   if (!isLoading && isError) {
     content = <Error nessage="There was an error" />;
