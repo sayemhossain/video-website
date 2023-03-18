@@ -28,8 +28,8 @@ export default function Video() {
   if (!isLoading && !isError && video?.id) {
     content = (
       <>
-        <Player />
-        <Description />
+        <Player link={video?.link} title={video?.title} />
+        <Description video={video} />
       </>
     );
   }
