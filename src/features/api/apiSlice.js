@@ -5,7 +5,7 @@ export const apiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:9000",
   }),
-  tagTypes: ["Videos"],
+  tagTypes: ["Videos", "Video"],
   endpoints: (builder) => ({
     //Getting all videos
     getVideos: builder.query({
@@ -46,7 +46,10 @@ export const apiSlice = createApi({
         method: "PATCH",
         body: data,
       }),
-      invalidatesTags: ["Videos"],
+      invalidatesTags: (result, error, arg) => [
+        "Videos",
+        { type: "Video", id: arg.id },
+      ],
     }),
   }),
 });
