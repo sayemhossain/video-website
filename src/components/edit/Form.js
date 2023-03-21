@@ -30,18 +30,6 @@ export default function Form({ video }) {
   const [duration, setDuration] = useState(initialDuration);
   const [views, setViews] = useState(initialViews);
 
-  // make form empty after submitting the form
-  const resetForm = () => {
-    setTitle("");
-    setAuthor("");
-    setDescription("");
-    setLink("");
-    setThumbnail("");
-    setDate("");
-    setDuration("");
-    setViews("");
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -58,7 +46,6 @@ export default function Form({ video }) {
         views,
       },
     });
-    resetForm();
   };
 
   return (
