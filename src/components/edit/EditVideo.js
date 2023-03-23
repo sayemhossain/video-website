@@ -17,7 +17,7 @@ export default function EditVideo() {
     content = <Error message="There was an error !"></Error>;
   }
   if (!isLoading && !isError && video?.id) {
-    content = <orm video={video} />;
+    content = <Form video={video} />;
   }
   return (
     <div className="max-w-7xl mx-auto px-5 lg:px-0">
